@@ -3,21 +3,87 @@
         <meta charset="utf-8">
         <style>
             .header div {
-                width: 70px;
+                position: relative;
+                width: 250px;
                 height: 70px; 
                 font-size: 20px; 
+                font-weight: bold;
                 float: left;
                 text-align: center;
             }
+            
+            .zeropen {
+                position: relative;
+                top: 30px;
+                left: 15%;
+            }
+            .unifox {
+                position: relative;
+                top: 180px;
+                right:15%;
+            }
+            .zeropen:hover {
+                
+            }
+            .unifox:hover {
+                
+            }
         </style>
+        <script>
+            var Zer = new Array('백서진','김동민','송기훈','박건','이찬우');
+            var Uni = new Array('임준성');
+            var check;
+        </script>
     </head>
     <body>
-        <br>
         <header class="header">
-            <a><div style="background-color: red">상</div></a>
-            <a><div style="background-color: orange">단</div></a>
-            <a><div style="background-color: yellow">바</div></a>
-            <a></a>
+            <div style="background-color: red">상</div>
+            <div style="background-color: orange">단</div>
+            <div style="background-color: yellow">바</div>
+            <div style="background-color: green">입</div>
+            <div style="background-color: blue">니</div>
+            <div style="background-color: indigo">다</div>
+            <div style="background-color: purple">뿅</div>
+            <a href="javascript:window.location.reload(true);" style="float:right;"><img src="img/refresh.png" style="width: 70px; height: 70px;"></a>
         </header>
+        
+        <div class="main">
+            <article>
+                <a onclick="Checkzer()"><img src="img/zeropen.PNG" style="width: 500px; height: 250ppx; float: left;" class="zeropen"></a>
+                <script>
+                   function Checkzer(){
+                        var input = prompt("이름을 입력해주세요.");
+                        var i,check=0;
+                       for(i=0;i<5;i++){
+                            if(input==Zer[i])  {
+                                document.write("<h1>"+input+"님 환영합니다."+"</h1>");
+                                location.href="https://www.facebook.com/zer0pen/?ref=br_rs";
+                                check = 1;
+                            } 
+                        }
+                        
+                        if(check==0){
+                            alert("소속된 동아리 부원이 아닙니다.");
+                        }      
+                    } 
+                </script>
+            </article>
+            
+            <actricle>
+                <a onclick="Checkuni()"><img src="img/unifox.PNG" style="width: 500px; height: 250px; float: right;" class="unifox"></a>
+                <script>
+                    function Checkuni(){
+                        var input = prompt("이름을 입력해주세요.");
+                        if(input==Uni[0]){
+                            document.write("<h1>"+input+"님 환영합니다."+"</h1>");
+                            location.href="https://www.facebook.com/UnifoxToTheWorld/?fref=ts";
+                        }
+                        else{
+                            alert("소속된 동아리 부원이 아닙니다.");
+                        }     
+                    }
+                </script>
+            </actricle>
+        </div>
     </body>
 </html>
